@@ -290,7 +290,7 @@ def _unwrap_typemap(structure, residue_map):
     for res in structure.residues:
         for res_ref, val in residue_map.items():
             #cJ if id(res.name) == id(res_ref):
-            if res.name == idres_ref:
+            if res.name == res_ref:
                 for i, atom in enumerate(res.atoms):
                     master_typemap[int(atom.idx)]["atomtype"] = val[i][
                         "atomtype"
