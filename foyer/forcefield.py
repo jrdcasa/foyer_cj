@@ -353,6 +353,10 @@ def _check_bonds(data, structure, assert_bond_params):
     """Check if any bonds lack paramters."""
     if data.bonds:
         missing = [b for b in structure.bonds if b.type is None]
+        #cJ
+        for ibond in missing:
+            print(ibond, ibond.atom1.atom_type, ibond.atom2.atom_type)
+        #cJ
         if missing:
             nmissing = len(structure.bonds) - len(missing)
             msg = (
